@@ -18,6 +18,6 @@ export const obtenerCita: (personaje?: string) => Promise<ICita> = async (
     imagen: data.image,
     direccionPersonaje: data.characterDirection,
   };
-
+  console.log("data normalizada: ", dataNormalizada);
   return dataNormalizada;
 };
