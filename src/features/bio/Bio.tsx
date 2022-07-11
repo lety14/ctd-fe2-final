@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { NombresSimpsons, INFO_SIMPSONS } from "./constants";
 import {
-  BioDescripcion,
-  BioImagen,
-  BioNombre,
-  BotonBio,
+  BioDescription,
+  BioImage,
+  BioName,
+  ButtonBio,
   ContainerBio,
-  ContainerBotones,
+  ContainerButtones,
 } from "./styles";
 
 const Bio = () => {
@@ -14,37 +14,29 @@ const Bio = () => {
     INFO_SIMPSONS[NombresSimpsons.BART]
   );
 
-  const onClick: (nombre: NombresSimpsons) => void = (nombre) =>
-    setBioActiva(INFO_SIMPSONS[nombre]);
+  const onClick: (name: NombresSimpsons) => void = (name) =>
+    setBioActiva(INFO_SIMPSONS[name]);
 
-  const crearBotones = () => {
-    return Object.keys(INFO_SIMPSONS).map((nombre: string) => (
-      <BotonBio
-        isActive={(bioActiva.id === nombre) as boolean}
-        key={nombre as string}
-        onClick={() => onClick(nombre as NombresSimpsons)}
+  const crearButtones = () => {
+    return Object.keys(INFO_SIMPSONS).map((name: string) => (
+      <ButtonBio
+        aria-label={name}
+        isActive={(bioActiva.id === name) as boolean}
+        key={name as string}
+        onClick={() => onClick(name as NombresSimpsons)}
       >
-        {nombre}
-      </BotonBio>
+        {name}
+      </ButtonBio>
     ));
   };
 
   return (
     <ContainerBio>
-      <ContainerBotones>{crearBotones()}</ContainerBotones>
+      <ContainerButtones>{crearButtones()}</ContainerButtones>
+      <BioImage src={bioActiva.image} alt={bioActiva.name} />
       <div>
-        <div>
-          {/* <img
-            src={bioActiva.image}
-            alt={bioActiva.nombre}
-            className={styles.bioImagen}
-          /> */}
-          <BioImagen src={bioActiva.image} alt={bioActiva.nombre} />
-        </div>
-        <div>
-          <BioNombre>{bioActiva.nombre}</BioNombre>
-          <BioDescripcion>{bioActiva.descripcion}</BioDescripcion>
-        </div>
+        <BioName>{bioActiva.name}</BioName>
+        <BioDescription>{bioActiva.description}</BioDescription>
       </div>
     </ContainerBio>
   );
