@@ -4,7 +4,7 @@ import { render } from "../../test-utils";
 import userEvent from "@testing-library/user-event";
 import { server } from "../../tests/mocks/server";
 import "whatwg-fetch";
-import Cita from "./Cita";
+import Quote from "./Quote";
 import "@testing-library/jest-dom";
 
 beforeAll(() => server.listen());
@@ -14,7 +14,7 @@ afterAll(() => server.close());
 describe("Quote component", () => {
   describe("When rendering a random quote", () => {
     it("should render quote component", async () => {
-      render(<Cita />);
+      render(<Quote />);
       expect(
         screen.getByPlaceholderText("Ingresa el nombre del autor")
       ).toBeVisible();
@@ -22,11 +22,11 @@ describe("Quote component", () => {
       expect(screen.getByLabelText("Borrar")).toBeEnabled();
     });
     it("should click the random quote button and fetch the data", async () => {
-      render(<Cita />);
+      render(<Quote />);
       await userEvent.click(screen.getByLabelText("Obtener cita aleatoria"));
-      expect(
-        (await screen.findAllByText("CARGANDO...")).length
-      ).toBeGreaterThan(0);
+      expect((await screen.findAllByText("LOADING...")).length).toBeGreaterThan(
+        0
+      );
     });
     it("should render a random quote", async () => {
       expect(
@@ -42,8 +42,8 @@ describe("Quote component", () => {
 
   describe("When rendering a random quote by character", () => {
     it("should render a quote from the character tipped in the input", async () => {
-      render(<Cita />);
-      const input = screen.getByLabelText("Author Cita");
+      render(<Quote />);
+      const input = screen.getByLabelText("Author Quote");
       userEvent.clear(input);
       fireEvent.change(input, { target: { value: "lisa" } });
       expect(input).toHaveDisplayValue("lisa");
@@ -60,9 +60,9 @@ describe("Quote component", () => {
 
   describe("When click delete button", () => {
     it("should render the placeholder in the input", async () => {
-      render(<Cita />);
+      render(<Quote />);
       await userEvent.click(screen.getByLabelText("Borrar"));
-      expect(screen.getByLabelText("Author Cita")).toHaveValue("");
+      expect(screen.getByLabelText("Author Quote")).toHaveValue("");
       expect(
         (await screen.findAllByText("No se encontro ninguna cita")).length
       ).toBeGreaterThan(0);
@@ -71,8 +71,8 @@ describe("Quote component", () => {
 
   describe("When the user introduce numbers", () => {
     it("should render an error message", async () => {
-      render(<Cita />);
-      const input = screen.getByLabelText("Author Cita");
+      render(<Quote />);
+      const input = screen.getByLabelText("Author Quote");
       userEvent.clear(input);
       fireEvent.change(input, { target: { value: "1" } });
       expect(input).toHaveDisplayValue("1");
