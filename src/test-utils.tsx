@@ -2,9 +2,9 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import quoteReducer from "./features/quote/citaSlice";
+import quoteReducer from "./features/quote/quoteSlice";
+import newsReducer from "./features/news/newsSlices";
 import { RootState } from "./app/store";
-import { ESTADO_FETCH } from "./features/quote/constants";
 
 const customRender = (
   ui: React.ReactElement,
@@ -12,7 +12,8 @@ const customRender = (
     preloadedState,
     store = configureStore({
       reducer: {
-        cita: quoteReducer,
+        quote: quoteReducer,
+        news: newsReducer,
       },
       preloadedState,
     }),
