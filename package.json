@@ -2,6 +2,7 @@
   "name": "ctd_fe2_final",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://lety14.github.com/ctd-fe2-final",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -28,7 +29,9 @@
     "test": "jest --env=jsdom",
     "coverage": "jest --env=jsdom --coverage",
     "lint": "tsc --noEmit && eslint . --fix --max-warnings 0",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
