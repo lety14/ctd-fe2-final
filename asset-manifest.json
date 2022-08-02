@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ctd-fe2-final/static/css/main.21bdef75.css",
+    "main.js": "/ctd-fe2-final/static/js/main.b958f109.js",
+    "static/js/787.743eaff0.chunk.js": "/ctd-fe2-final/static/js/787.743eaff0.chunk.js",
+    "static/media/sky-background.jpg": "/ctd-fe2-final/static/media/sky-background.40a634773131f78ca221.jpg",
+    "static/media/maggie.png": "/ctd-fe2-final/static/media/maggie.b03312c2634f62e1b2eb.png",
+    "static/media/lisa.png": "/ctd-fe2-final/static/media/lisa.1a47d1de37e523b7350f.png",
+    "static/media/suscribe-img.jpg": "/ctd-fe2-final/static/media/suscribe-img.5244698d52a8dfe21988.jpg",
+    "static/media/homer.png": "/ctd-fe2-final/static/media/homer.cbd7ec48be1e6ba83c68.png",
+    "static/media/marge.png": "/ctd-fe2-final/static/media/marge.8c4875c6c2b38d5da1e0.png",
+    "static/media/homer-background.jpg": "/ctd-fe2-final/static/media/homer-background.a3f0c83591e334335e79.jpg",
+    "static/media/close.png": "/ctd-fe2-final/static/media/close.f741c2bd2446e4020e21.png",
+    "static/media/homer-soap.jpg": "/ctd-fe2-final/static/media/homer-soap.ced532dcd824e5184e55.jpg",
+    "static/media/bart.png": "/ctd-fe2-final/static/media/bart.cfa369b39b5dd6795d7e.png",
+    "index.html": "/ctd-fe2-final/index.html",
+    "main.21bdef75.css.map": "/ctd-fe2-final/static/css/main.21bdef75.css.map",
+    "main.b958f109.js.map": "/ctd-fe2-final/static/js/main.b958f109.js.map",
+    "787.743eaff0.chunk.js.map": "/ctd-fe2-final/static/js/787.743eaff0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21bdef75.css",
+    "static/js/main.b958f109.js"
+  ]
+}
